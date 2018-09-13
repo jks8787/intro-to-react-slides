@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>React Introduction</title>
     <meta charset="utf-8">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -19,21 +19,175 @@
   <body>
     <textarea id="source">
 
-class: center, middle
+        class: center, middle
 
-# Title
+        # intro to react.js
 
----
+        ---
 
-# Agenda
+        # fyi
 
-1. Introduction
-2. Deep-dive
-3. ...
+        Girl Develop It is here programs to
+        learn software through mentorship and hands-on instruction.
 
----
+        remember!
 
-# Introduction
+        * Every question is important
+        * Help each other
+        * Have fun
+
+        ---
+
+        # intros to us
+
+        * Who are you?
+        * What do you hope to get out of the class?
+
+        ---
+
+        # knowledge:
+
+        * javascript
+        * es6
+        * HTML/CSS
+
+        # resources:
+
+        * a codepen account
+        * a text editor
+        * google chrome with react developer tools
+
+        ---
+
+        # agenda
+
+        * day 1 - Hello World! Components, Props, State, JSX, ES6
+        * day 2 - ES6, Inline Styles, form basics
+        * day 3 - Best practices, view containers, more on forms
+        * day 4 - Recreate known sites and overview of Redux React
+
+        ---
+
+        # resources
+
+        * [react docs](https://reactjs.org/docs/hello-world.html)
+        * [react tutorial](https://reactjs.org/tutorial/tutorial.html)
+        * [codecademy course](https://www.codecademy.com/learn/react-101)
+
+        ---
+
+        # what is react?
+
+        * The v in mvc
+        * developed by facebook and open-sourced
+
+        ---
+
+        # when to use react?
+
+        * for dynamic sites
+        * if you want to use vanilla JS and ES6, rather than learn a new DSL (domain specific language)
+
+        ---
+
+        # getting started with jsx
+
+          * what is jsx
+            * JSX allows us to describe our User Interfaces (UIs) in a syntax very similar to the HTML
+            * it is optional
+            * JSX provides syntactic sugar for the React.createElement(component, props, ...children) function
+            * you can catch more template errors at compile time, rather than on page load
+            * Making smaller, reusable components is also easier
+            * [jsx](https://jsx.github.io/)
+
+          * why is jsx
+            * key - React asks for a key attribute that points to a unique ID for each list element
+              * To optimize list display performance
+            * Synthetic events - Some event handlers (onSubmit, onClick) have different names or implementations in different browsers.
+              * The HTML created by your code will be browser specific-  simplifying cross browser compatibility.
+
+        ---
+
+        # behind the sceans
+
+        ## Transpiling
+          * babel to transpile it to the supported JavaScript that the browser will understand.
+          * babel can convert the code from ES6 to ES5, this is because not all the browsers can interpret our ES6
+
+        ## Virtual DOM
+          * the virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI
+            is kept in memory and synced with the “real” DOM by a library such as ReactDOM.
+          * updating the DOM requires browser manipulation, which is slow
+            * updating the virtual DOM does not change the browser (making it faster)
+
+        ---
+        # behind the sceans
+
+        ## javascript class
+
+        * a class is a new Javascript feature, added in ES6 (ECMA2015).
+        * behaves similarly to classes in object-oriented languages.
+        * a class can have a constructor function, which is run on initialization.
+        * a class can extend another class with the "extends" keyword.
+          * If it does so, it's constructor needs to use the word super().
+
+        ---
+
+        # components
+
+        * components are the building blocks of react
+
+        * A function component is the simplest form of a React component
+          * It is a simple function with a simple contract
+          ```javascript
+              const Button = (props) => {
+                    return (
+                      <button>a simple button</button>
+                    );
+              }
+          ```
+
+        * A class component is a more featured way to define a React component
+          * It also acts like a function that receives props, but that function also considers a private internal state
+          ```javascript
+              class Button extends React.Component {
+                  state = { counter: 1 };
+                  render() {
+                    return (
+                      <button>{this.state.counter}</button>
+                    );
+                  }
+                }
+          ```
+
+        ---
+         # code
+
+         * [open the codepen](https://codepen.io/jks8787/pen/YOvZQQ)
+         * we have function component and a class component
+         ```javascript
+             const Hello = () => (
+               <h2>Hello World</h2>
+             );
+         ```
+         ```javascript
+             class App extends React.Component {
+               render() {
+                 return (<h1>Greetings Earth</h1>);
+               }
+             }
+         ```
+         * we update the DOM, using a diff of the virtual DOM.
+          * First argument is new HTML, second is the element to insert it in.
+          ```javascript
+            ReactDOM.render(<App />, document.getElementById('root'));
+          ```
+        ---
+        # more info on components
+          * props
+          * state
+          * setState
+        ---
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
