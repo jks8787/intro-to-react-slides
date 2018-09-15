@@ -159,8 +159,9 @@
                   }
                 }
           ```
-
+          * [read more](https://reactjs.org/docs/components-and-props.html#functional-and-class-components)
         ---
+
          # code
 
          * [open the codepen](https://codepen.io/jks8787/pen/YOvZQQ)
@@ -183,11 +184,162 @@
             ReactDOM.render(<App />, document.getElementById('root'));
           ```
         ---
+
         # more info on components
+
           * props
-          * state
+            * props are attributes passed down from one component to another
+            * a component's props can be accessed through this.props in the render function
+            * functions can be passed down as props as well.
+            * [open the codepen](https://codepen.io/jks8787/pen/ZMjoNz)
+
           * setState
+            * setState() enqueues changes to the component state
+            * this is the primary method you use to update the user interface in response to event handlers and server responses.
+            * [open the codepen](https://codepen.io/jks8787/pen/yxqEPY)
+
+          * state
+            * state is set at the parent component, and then can passed down to children as props.
+            * a component's initial state is set in the constructor function.
+            * [open the codepen](https://codepen.io/jks8787/pen/aajGgZ)
+
         ---
+
+        # es6 - Object.assign
+          * Object.assign is new to Javascript with ES6.
+          * It takes the first object (usually empty) and then updates it with attributes from any following objects, in order
+          * This is a great way to create new objects based on existing ones concisely
+          * [read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+
+        # es6 - arrow functions
+          * Arrow functions are a new, improved syntax for functions
+          * One benefit of using arrow functions is that they do not define their own `this`, so you don't need to use `var that=this` with them anymore
+          * [read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+        [open the codepen](https://codepen.io/jks8787/pen/yxqEPY)
+
+        ---
+
+        # suggested reading/coding
+
+          * [embracing es6 part1](https://cantina.co/embracing-es6-part1/)
+          * [ES5 vs ES6 ( With example code )](https://codeburst.io/es5-vs-es6-with-example-code-9901fa0136fc)
+          * [use ecmascript 6 today](https://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582)
+          * [react tutorial](https://reactjs.org/tutorial/tutorial.html)
+
+        ---
+
+        # agenda
+
+          * day 1 - Hello World! Components, Props, State, JSX, ES6
+          * day 2 - ES6, Inline Styles, form basics
+          * day 3 - Best practices, view containers, more on forms
+          * day 4 - Recreate known sites and overview of Redux React
+
+        ---
+
+        # review
+
+          * jsx --> javascript that looks like HTML, and gets compiled to javascript that renders HTML
+
+          * props --> attributes passed down from one component to another; a component's props can be accessed through this.props in the render function
+
+          * state --> Data stored in parent component, passed down to child components through props; Initialized in the constructor function; Updated with this.setState
+            * this.state and this.props are immutable
+
+          * react tutorial [solution](https://codepen.io/gaearon/pen/gWWZgR)
+
+        ---
+
+        # lifecycle hooks
+
+          * [Docs](https://reactjs.org/docs/state-and-lifecycle.html)
+
+          * componentWillMount:
+            * function called before component is rendered. This is the most commonly used lifecycle hook (AJAX calls, timers)
+
+          * componentDidMount:
+            * function called after component is rendered. Useful for third party integrations if really needed (jQuery plugins)
+
+          * componentWillUnmount:
+            * function called before component is removed from the DOM
+
+          * componentDidUnmount*:
+            * function called after removal from DOM. Useful for cleanup (removing timers, etc.)
+
+          [open the codepen](https://codepen.io/gaearon/pen/vXdGmd)
+
+        ---
+          # review of functional and class components
+
+          * functional components - For child components where you only need the render function
+          ```javascript
+              const Button = (props) => {
+                    return (
+                      <button>a simple button</button>
+                    );
+              }
+          ```
+          * A class component is a more featured way to define a React component
+            * It also acts like a function that receives props, but that function also considers a private internal state
+            ```javascript
+                class Button extends React.Component {
+                    state = { counter: 1 };
+                    render() {
+                      return (
+                        <button>{this.state.counter}</button>
+                      );
+                    }
+                  }
+            ```
+        ---
+
+        # composition vs inheritance
+
+          * composition is always preferred over inheritance in React - make components as reusable as possible!
+          * [docs](https://reactjs.org/docs/composition-vs-inheritance.html#so-what-about-inheritance)
+
+        ---
+
+        # controlled components
+
+        * [docs](https://reactjs.org/docs/forms.html)
+        ```
+          In HTML, form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input.
+          In React, mutable state is typically kept in the state property of components, and only updated with setState().
+        ```
+
+        * [open the codepen](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+        ---
+
+        # uncontrolled components
+
+          * [docs](https://reactjs.org/docs/uncontrolled-components.html)
+          * use refs to store internal form state, and use setState on submit
+          * use defaultValue to set initial values in form elements (input, select, etc.)
+          * usually not recommended if you can use controlled components (or Redux)
+          * [open the codepen](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
+
+        ---
+
+        # suggested reading/coding
+
+          * [thinking in react](https://reactjs.org/docs/thinking-in-react.html)
+          * [simple react todo list](https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b)
+
+        ---
+
+        # agenda
+
+          * day 1 - Hello World! Components, Props, State, JSX, ES6
+          * day 2 - ES6, Inline Styles, form basics
+          * day 3 - Best practices, view containers, more on forms
+          * day 4 - Recreate known sites and overview of Redux React
+
+        ---
+        
+        ---
+
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
