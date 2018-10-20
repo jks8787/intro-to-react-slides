@@ -4,13 +4,15 @@
 
 ### what you need to know:
 
-* HTML and JavaScript understanding.
+* HTML and JavaScript understanding
 
 ### what you need to have:
 
 * laptop and charger
 
 * a free CodePen account
+
+* a free codesandbox account
 
 * a github account
 
@@ -26,4 +28,8 @@
 
 * Start using the latest and greatest version of JavaScript, ES6 (ECMAScript 6, aka ES2015)
 
-* Build your own React projects
+* Build your own React project
+
+* Explore create-react-app ( version `1.5.2`)
+
+* Explore redux 
